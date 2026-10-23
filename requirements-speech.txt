@@ -1,0 +1,5 @@
+faster-whisper>=1.0
+sounddevice>=0.4
+numpy>=1.24
+pyttsx3>=2.90
+opencc-python-reimplemented>=0.1.7

@@ -1,0 +1,12 @@
+{"text": "今天早上起來頭昏昏的，大約三分，吃完早餐就好了。", "expect": {"symptoms": ["頭暈"], "severity": 3}}
+{"text": "血壓量起來是一百五十六、九十四，有點高。", "expect": {"bp_sys": 156, "bp_dia": 94}}
+{"text": "中午吃太鹹，下午頭痛痛的，差不多四分，痛了快一個小時。", "expect": {"symptoms": ["頭痛"], "severity": 4, "duration_min": 60, "triggers": ["飲食偏鹹"]}}
+{"text": "膝蓋不太舒服，爬樓梯的時候會痛。", "expect": {"symptoms": ["膝蓋痛"], "triggers": ["活動量大"]}}
+{"text": "早上的降血壓藥跟晚上的藥都有吃。", "expect": {"meds": [["降血壓藥", true], ["晚上的藥", true]]}}
+{"text": "半夜醒來心臟亂跳，大概五分鐘，五分。", "expect": {"symptoms": ["心悸"], "severity": 5, "duration_min": 5}}
+{"text": "今天都沒事，血壓一百二十八跟七十八。", "expect": {"symptoms": [], "bp_sys": 128, "bp_dia": 78}}
+{"text": "走路走到一半突然喘不過氣，休息十五分鐘才好。", "expect": {"symptoms": ["喘"], "duration_min": 15}}
+{"text": "昨天跌倒，有一點昏過去。", "expect": {"red_flags": ["昏倒"]}}
+{"text": "早餐沒吃就去散步，有點頭暈眼花，大概六分。", "expect": {"symptoms": ["頭暈"], "severity": 6, "triggers": ["空腹"]}}
+{"text": "藥吃完了還沒去拿，這三天都沒吃降血壓的藥。", "expect": {"meds": [["降血壓藥", false]]}}
+{"text": "胃不太舒服，脹脹的，三分，大概兩個鐘頭。", "expect": {"symptoms": ["胃痛"], "severity": 3, "duration_min": 120}}

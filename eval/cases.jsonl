@@ -1,0 +1,25 @@
+{"text": "今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。", "expect": {"symptoms": ["頭暈"], "severity": 5, "bp_sys": 150, "bp_dia": null, "meds": [["早上的藥", true]]}}
+{"text": "早上量血壓一百三十八跟八十五，降血壓的藥吃了。", "expect": {"symptoms": [], "bp_sys": 138, "bp_dia": 85, "meds": [["降血壓藥", true]]}}
+{"text": "高壓一百六十二，低壓九十八，頭有點脹痛。", "expect": {"symptoms": ["頭痛"], "bp_sys": 162, "bp_dia": 98}}
+{"text": "血壓 145/92，今天沒有頭暈。", "expect": {"symptoms": [], "bp_sys": 145, "bp_dia": 92}}
+{"text": "昨天晚上胸口悶悶的，大概三分，持續十分鐘左右。", "expect": {"symptoms": ["胸悶"], "severity": 3, "duration_min": 10}}
+{"text": "腰很酸，痛到七分，坐不住，大概一個半小時。", "expect": {"symptoms": ["腰痛"], "severity": 7, "duration_min": 90}}
+{"text": "忘記吃晚上的藥了。", "expect": {"symptoms": [], "meds": [["晚上的藥", false]]}}
+{"text": "血糖空腹一百二十八，早上有吃血糖的藥。", "expect": {"glucose": 128, "meds": [["降血糖藥", true]], "triggers": ["空腹"]}}
+{"text": "飯後血糖兩百一。", "expect": {"glucose": 210}}
+{"text": "今天身體很好，沒有不舒服。", "expect": {"symptoms": [], "red_flags": []}}
+{"text": "剛剛胸口很痛，講話有點不清楚。", "expect": {"red_flags": ["胸痛", "說話不清"]}}
+{"text": "右邊手腳半邊無力，嘴巴有點歪。", "expect": {"red_flags": ["單側無力或麻木", "臉或嘴歪斜"]}}
+{"text": "最近天氣變冷，膝蓋又在痛了，大概四分。", "expect": {"symptoms": ["膝蓋痛"], "severity": 4, "triggers": ["天氣變化"]}}
+{"text": "昨晚睡不著，到三點才睡，今天好累。", "expect": {"symptoms": ["失眠", "疲倦"]}}
+{"text": "早上起床太快，頭暈了一下子，大概兩分。", "expect": {"symptoms": ["頭暈"], "severity": 2, "duration_min": null, "triggers": ["姿勢改變"]}}
+{"text": "肚子痛，想吐，大概六分，大概兩個小時。", "expect": {"symptoms": ["胃痛", "噁心"], "severity": 6, "duration_min": 120}}
+{"text": "吃了兩顆止痛藥，頭痛還是有五分。", "expect": {"symptoms": ["頭痛"], "severity": 5, "meds": [["止痛藥", true]]}}
+{"text": "心跳好快，心悸大概十分鐘，嚴重度四分。", "expect": {"symptoms": ["心悸"], "severity": 4, "duration_min": 10}}
+{"text": "今天十分不舒服，頭很暈。", "expect": {"symptoms": ["頭暈"], "severity": null}}
+{"text": "咳嗽咳了一整天，大概三分。", "expect": {"symptoms": ["咳嗽"], "severity": 3, "duration_min": 1440}}
+{"text": "腳有點腫，晚上的藥沒有吃。", "expect": {"symptoms": ["水腫"], "meds": [["晚上的藥", false]]}}
+{"text": "壓力很大，頭痛了半個小時，差不多五分。", "expect": {"symptoms": ["頭痛"], "severity": 5, "duration_min": 30, "triggers": ["情緒壓力"]}}
+{"text": "量了血壓，一百四十，九十。", "expect": {"bp_sys": 140, "bp_dia": 90}}
+{"text": "頭暈暈的，七分，大概二十分鐘，有吃藥了。", "expect": {"symptoms": ["頭暈"], "severity": 7, "duration_min": 20}}
+{"text": "這兩三天都便秘，沒什麼胃口。", "expect": {"symptoms": ["便秘"]}}
