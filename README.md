@@ -47,20 +47,6 @@ The model only fills fields the rules left empty, and every value it returns
 is checked against the sentence: a number the patient never said, or a symptom
 whose words are not in the sentence, is rejected and printed.
 
-## Demo script (for the 3-minute video)
-
-```bash
-python -m speakhome seed --reset
-python -m speakhome log --text "今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。" --answer "大概半個小時" --yes
-python -m speakhome log --text "胸口很痛" --yes       # fixed keyword rule: "call family or 119"
-python -m speakhome log --text "刪掉剛剛那筆"          # the patient can withdraw an entry
-python -m speakhome summary --patient 王阿嬤
-python -m speakhome serve --lan                      # caregiver opens it from a phone at home
-```
-
-For the video, `station` (microphone) or `station --keyboard` shows the same
-flow interactively.
-
 ## Commands
 
 | Command | What it does |
@@ -124,18 +110,3 @@ report.
 - Each entry's sentence and fields are encrypted (Fernet) with a key stored beside the database with file mode 600. Timestamps are in the clear so date ranges can be queried. A shipped station would use full-database encryption with the key in secure storage.
 - `delete-last` (or saying 「刪掉剛剛那筆」) overwrites the entry's content.
 - `serve --lan` has no login; use it only on a trusted home network.
-
-## Stage II (UGen300)
-
-1. Convert the speech-to-text and language models for the Hailo-10H and measure latency, power and memory against this CPU baseline.
-2. Physical station: big button, speaker, status light, mini PC or SBC host.
-3. Taiwanese speech if models allow; several older people per station; a weekly caregiver digest.
-
-Model support on the UGen300 must be confirmed on the competition's platform page before this plan is final.
-
-## Tests
-
-```bash
-pip install pytest
-python -m pytest
-```
