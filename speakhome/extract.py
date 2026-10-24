@@ -58,6 +58,22 @@ DELETE_PATTERNS = [r"刪(掉|除).{0,4}(剛剛|剛才|上一)", r"(剛剛|剛才
 TIMES = ["清晨", "凌晨", "早上", "上午", "中午", "下午", "傍晚", "晚上", "半夜", "睡前", "剛剛", "剛才"]
 NEGATION = re.compile(r"(沒有|沒|不|無)$")
 
+HEART_RATE_PATTERNS = [
+    rf"(?:每分鐘|一分鐘)\s*(?:大概|差不多|大約|約)?\s*(?:跳了?)?\s*({NUM})\s*多?\s*下",
+    rf"跳了?\s*({NUM})\s*多?\s*下",
+    rf"(?:心跳|脈搏|心率)數?{NOT_NUM}{{0,6}}?({NUM})\s*多?\s*下?",
+]
+HR_UNMEASURED = re.compile(r"(沒有?|忘了|忘記)量")
+
+
+def _heart_rate(text: str):
+    for pat in HEART_RATE_PATTERNS:
+        for m in re.finditer(pat, text):
+            value = cn2num(m.group(1))
+            if value is not None and 30 <= value <= 250:
+                return int(value), m.group(0).strip(), m.span()
+    return None, None, None
+
 
 def _negated(text: str, start: int, matched: str, pattern: str) -> bool:
     # "頭不暈", "頭沒有暈" -- unless 不 is part of the phrase itself ("睡不著").
@@ -194,8 +210,10 @@ def extract(text: str) -> dict:
     triggers, trig_ev = _find_terms(t, TRIGGERS, allow_negation=True)
     red_flags, red_ev = _find_terms(t, RED_FLAGS)
     # A red-flag phrase like 胸口痛 should not also count as an ordinary symptom.
-    severity, sev_ev = _severity(t)
-    duration_min, dur_ev = _duration(t)
+    heart_rate, hr_ev, hr_span = _heart_rate(t)
+    t_rest = t if not hr_span else t[:hr_span[0]] + "，" * (hr_span[1] - hr_span[0]) + t[hr_span[1]:]
+    severity, sev_ev = _severity(t_rest)
+    duration_min, dur_ev = _duration(t_rest)
     bp, bp_ev = _blood_pressure(t)
     glucose, glu_ev = _glucose(t)
     meds, med_ev = _medications(t)
@@ -221,6 +239,8 @@ def extract(text: str) -> dict:
         "duration_text": dur_ev,
         "bp": bp,
         "glucose": glucose,
+        "heart_rate": heart_rate,
+        "heart_rate_unmeasured": bool(heart_rate is None and "心跳" in t and HR_UNMEASURED.search(t)),
         "medications": meds,
         "triggers": triggers,
         "red_flags": red_flags,
@@ -231,5 +251,5 @@ def extract(text: str) -> dict:
 
 
 def is_empty(fields: dict) -> bool:
-    return not (fields["symptoms"] or fields["bp"] or fields["glucose"] or fields["medications"]
+    return not (fields["symptoms"] or fields["bp"] or fields["glucose"] or fields.get("heart_rate") or fields["medications"]
                 or fields["red_flags"] or fields["well"])

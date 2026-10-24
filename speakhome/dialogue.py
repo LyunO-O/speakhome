@@ -11,6 +11,7 @@ SAFETY_MESSAGE = "如果現在還不舒服，請馬上聯絡家人，或撥打 1
 
 QUESTIONS = {
     "severity": "大概幾分？零分是完全不會，十分是最嚴重。",
+    "heart_rate": "有量心跳嗎？一分鐘大概跳幾下？",
     "duration": "大概持續多久？",
     "what": "今天身體有哪裡不舒服，或是有量血壓、吃藥嗎？",
 }
@@ -24,6 +25,12 @@ def follow_up_needed(fields: dict) -> str | None:
     if fields["red_flags"]:
         return None  # do not quiz someone who may be unwell
     if fields["symptoms"]:
+        if "心悸" in fields["symptoms"]:
+            if fields.get("heart_rate") is None and not fields.get("heart_rate_unmeasured"):
+                return "heart_rate"
+            if fields["duration_text"] is None:
+                return "duration"
+            return None
         if fields["severity"] is None:
             return "severity"
         if fields["duration_text"] is None:
@@ -47,6 +54,19 @@ def merge_answer(fields: dict, slot: str, answer: str) -> dict:
         if value is not None:
             fields["severity"] = value
             fields["evidence"]["severity"] = answer.strip()
+    elif slot == "heart_rate":
+        value = extra.get("heart_rate")
+        if value is None:
+            for m in re.finditer(NUM, t):
+                n = cn2num(m.group(0))
+                if n is not None and 30 <= n <= 250:
+                    value = int(n)
+                    break
+        if value is not None:
+            fields["heart_rate"] = value
+            fields["evidence"]["heart_rate"] = answer.strip()
+        elif re.search(r"沒有?量|不知道|忘了", t):
+            fields["heart_rate_unmeasured"] = True
     elif slot == "duration":
         if extra["duration_text"]:
             fields["duration_min"] = extra["duration_min"]
@@ -58,7 +78,7 @@ def merge_answer(fields: dict, slot: str, answer: str) -> dict:
             if item not in fields[key]:
                 fields[key].append(item)
                 fields["evidence"].setdefault(key, {})[item] = extra["evidence"].get(key, {}).get(item, "")
-    for key in ("bp", "glucose", "time_of_day"):
+    for key in ("bp", "glucose", "heart_rate", "time_of_day"):
         if fields.get(key) is None and extra.get(key) is not None:
             fields[key] = extra[key]
     if not fields["medications"] and extra["medications"]:
@@ -98,6 +118,8 @@ def read_back(fields: dict) -> str:
         parts.append(f"血壓 {bp['sys']}" + (f"/{bp['dia']}" if bp["dia"] else ""))
     if fields["glucose"]:
         parts.append(f"血糖 {fields['glucose']}")
+    if fields.get("heart_rate"):
+        parts.append(f"心跳每分鐘 {fields['heart_rate']} 下")
     for med in fields["medications"]:
         parts.append(("有吃" if med["taken"] else "沒吃") + med["name"])
     if fields["triggers"]:

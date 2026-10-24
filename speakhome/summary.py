@@ -98,6 +98,15 @@ def build_summary(entries: list[dict], start: datetime, end: datetime) -> dict:
         glucose = {"count": len(vals), "mean": round(mean(vals)), "max": max(vals), "min": min(vals),
                    "group": groups.add(f"血糖（{len(vals)} 筆）", [e["id"] for e in glu_es])}
 
+    hr_es = readings("heart_rate")
+    heart_rate = None
+    if hr_es:
+        vals = [e["fields"]["heart_rate"] for e in hr_es]
+        hi = max(hr_es, key=lambda e: e["fields"]["heart_rate"])
+        heart_rate = {"count": len(vals), "mean": round(mean(vals)), "max": max(vals), "min": min(vals),
+                      "group": groups.add(f"心跳（{len(vals)} 筆）", [e["id"] for e in hr_es]),
+                      "max_group": groups.add(f"心跳最快 {hi['fields']['heart_rate']} 下", [hi["id"]])}
+    
     # Medication
     meds: dict[str, dict[str, list[int]]] = defaultdict(lambda: {"taken": [], "missed": []})
     for e in entries:
@@ -143,7 +152,7 @@ def build_summary(entries: list[dict], start: datetime, end: datetime) -> dict:
         "start": start, "end": end,
         "days_total": days_total, "days_logged": days_logged, "entry_count": len(entries),
         "logged_group": groups.add(f"全部紀錄（{len(entries)} 筆）", list(by_id)),
-        "symptoms": symptoms, "bp": bp, "glucose": glucose,
+        "symptoms": symptoms, "bp": bp, "glucose": glucose, "heart_rate": heart_rate,
         "medications": medications, "triggers": triggers, "red_flags": red_flags,
         "well_days": len({by_id[i]["ts"].date() for i in well}),
         "well_group": groups.add("自述身體還好", well) if well else None,

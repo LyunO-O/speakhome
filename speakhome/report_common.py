@@ -39,6 +39,8 @@ def entry_tags(fields: dict) -> list[str]:
         tags.append(f"血壓 {bp['sys']}" + (f"/{bp['dia']}" if bp.get("dia") else ""))
     if fields.get("glucose"):
         tags.append(f"血糖 {fields['glucose']}")
+    if fields.get("heart_rate"):
+        tags.append(f"心跳 {fields['heart_rate']} 下/分")
     for m in fields.get("medications", []):
         tags.append(("有吃" if m["taken"] else "沒吃") + m["name"])
     for f in fields.get("red_flags", []):

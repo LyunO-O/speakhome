@@ -98,7 +98,7 @@ def render_html(s: dict, patient: str = "[姓名]") -> str:
     else:
         out.append('<p>這段期間沒有提到症狀。</p>')
 
-    if s["bp"] or s["glucose"]:
+    if s["bp"] or s["glucose"] or s.get("heart_rate"):
         out.append('<h2>量測 <span class="en">Measurements</span></h2><table><tr><th>項目</th><th>筆數</th><th>平均</th><th>最高</th><th>最低</th></tr>')
         if bp := s["bp"]:
             avg = f'{bp["mean_sys"]}' + (f' / {bp["mean_dia"]}' if bp["mean_dia"] else "")
@@ -107,6 +107,9 @@ def render_html(s: dict, patient: str = "[姓名]") -> str:
         if g := s["glucose"]:
             out.append(f'<tr><td><b>血糖</b></td><td>{_link(g["group"], str(g["count"]) + " 筆")}</td>'
                        f'<td>{g["mean"]}</td><td>{g["max"]}</td><td>{g["min"]}</td></tr>')
+        if hr := s.get("heart_rate"):
+            out.append(f'<tr><td><b>心跳</b>（每分鐘幾下）</td><td>{_link(hr["group"], str(hr["count"]) + " 筆")}</td>'
+                       f'<td>{hr["mean"]}</td><td>{_link(hr["max_group"], str(hr["max"]))}</td><td>{hr["min"]}</td></tr>')
         out.append('</table>')
 
     if s["medications"]:

@@ -156,7 +156,7 @@ def render_pdf(s: dict, path: str | Path, patient: str = "[姓名]") -> Path:
     else:
         story.append(Paragraph("這段期間沒有提到症狀。", st["cell"]))
 
-    if s["bp"] or s["glucose"]:
+    if s["bp"] or s["glucose"] or s.get("heart_rate"):
         story.append(Paragraph("量測 <font size='9' color='#5F686B'>Measurements</font>", st["h2"]))
         rows = [["項目", "筆數", "平均", "最高", "最低"]]
         if bp := s["bp"]:
