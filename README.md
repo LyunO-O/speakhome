@@ -1,14 +1,12 @@
 # Speak Home 說給家聽 — Stage I prototype
 
+ASUS UGen AI League (Everyday AI · Battlefield Lightning) — Stage I prototype
+
 A local voice health diary for older patients and the family who cares for them.
 The patient says one sentence a day in Mandarin; the station extracts the details,
 asks at most one follow-up question, reads the entry back for confirmation and
 stores it encrypted on the device. Before a clinic visit the caregiver gets a
 one-page summary in which **every number links to the sentences it came from**.
-
-Built for the ASUS UGen AI League (Everyday AI · Battlefield Lightning). This
-Stage I version runs entirely on a laptop CPU; Stage II moves the speech and
-language models onto the ASUS UGen300.
 
 > Speak Home organises what the patient said. It does not diagnose, give
 > medication advice or decide whether to see a doctor.
@@ -17,35 +15,46 @@ language models onto the ASUS UGen300.
 
 Python 3.10+.
 
-```bash
-pip install -r requirements.txt              # core: works with typed input
-python -m speakhome seed --reset             # two weeks of sample entries
-python -m speakhome summary --patient 王阿嬤  # writes reports/visit-summary-*.pdf and .html
-```
-
-Open the PDF and click any underlined number to jump to its source sentences.
-
-### Speech input (optional)
+### 1. Install
 
 ```bash
-pip install -r requirements-speech.txt       # faster-whisper, sounddevice, pyttsx3, opencc
-python -m speakhome station                  # press Enter, speak, press Enter
+pip install -r requirements.txt              # storage and visit summaries
+pip install -r requirements-speech.txt       # speech: faster-whisper, sounddevice, pyttsx3, opencc
 ```
 
-The first run downloads the Whisper model (`small` by default; set
-`SPEAKHOME_WHISPER=medium` for better accuracy on a faster machine). Audio is
-kept in memory only and dropped after transcription; no audio file is written.
+The first time the station runs it downloads the Whisper speech model. 
+After that, set `HF_HUB_OFFLINE=1` so the station never connects to
+the internet.
 
-### Optional local language model
+### 2. Daily check-in
 
 ```bash
-ollama pull qwen2.5:3b
-python -m speakhome station --llm qwen2.5:3b
+python -m speakhome station           # press Enter, speak, press Enter
 ```
 
-The model only fills fields the rules left empty, and every value it returns
-is checked against the sentence: a number the patient never said, or a symptom
-whose words are not in the sentence, is rejected and printed.
+The station asks at most one follow-up question, then reads the entry back.
+Answer 「對，沒錯」 to save it; only confirmed entries count in summaries. To
+withdraw the last entry, say 「刪掉剛剛那筆」 or run `delete-last`.
+
+Audio is kept in memory only and dropped after transcription; no audio file
+is written.
+
+### 3. Before a clinic visit
+
+```bash
+python -m speakhome summary --patient 王阿嬤 --days 30
+```
+
+This writes a PDF and an HTML page covering the last 30 days, up to today.
+Click any underlined number to see the sentences behind it. To let a
+caregiver open the summary from a phone on the same home network:
+
+```bash
+python -m speakhome serve --lan
+```
+
+The page has no login; use it only on a trusted home network.
+
 
 ## Commands
 
@@ -86,27 +95,3 @@ Design rules carried into the code:
 - **Only confirmed entries count** in summaries; unclear confirmations are stored but excluded.
 - **No value without a source**: the summary is computed only from stored fields, and each statistic links to the sentences behind it.
 - **Keyword alerts are a fixed rule** (chest pain, slurred speech, one-sided weakness, facial droop, fainting, breathing difficulty) that prompts "call your family or 119". It is not a medical judgement.
-
-## Results so far
-
-Field extraction, rules only, on a laptop CPU:
-
-| Set | Sentences | Fields correct | Note |
-|---|---|---|---|
-| `eval/cases.jsonl` | 25 | 65 / 65 (100%) | development set; the rules were tuned on it |
-| `eval/holdout.jsonl` | 12 | 22 / 27 (81%) | written afterwards and **not** tuned on |
-
-Extraction takes well under a millisecond per sentence (median). The holdout
-misses show where rules run out (for example 「膝蓋不太舒服」 and 「血壓…一百五十六、九十四」),
-which is the job of the grounded language model in Stage II. Both sets are
-small and written by the team; the real measure needs recordings from older
-speakers, including speech-to-text error rate, which this version does not yet
-report.
-
-## Privacy
-
-- No camera; the microphone records only between two presses of Enter (the button in the station design).
-- Audio is never written to disk.
-- Each entry's sentence and fields are encrypted (Fernet) with a key stored beside the database with file mode 600. Timestamps are in the clear so date ranges can be queried. A shipped station would use full-database encryption with the key in secure storage.
-- `delete-last` (or saying 「刪掉剛剛那筆」) overwrites the entry's content.
-- `serve --lan` has no login; use it only on a trusted home network.

@@ -1,29 +1,558 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>回診摘要 · 王阿嬤</title><style>
-:root{--ink:#1F2A2E;--body:#3A4548;--muted:#5F686B;--paper:#F6F2EA;--card:#FFFDF8;
---line:#DED6C6;--accent:#A8432F;--teal:#2F6F6A;--hl:#F3DCD3}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--body);
-font:17px/1.6 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
-main{max-width:860px;margin:0 auto;padding:32px 20px 64px}
-h1{font-size:30px;color:var(--ink);margin:0 0 4px}h2{font-size:21px;color:var(--ink);
-margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-.sub{color:var(--muted);margin:0}.en{color:var(--muted);font-size:14px;font-weight:400}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:20px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.kpi b{display:block;font-size:26px;color:var(--ink)}.kpi span{color:var(--muted);font-size:14px}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:14px;color:var(--muted);font-weight:600;background:#EFE8DB}
-tr:last-child td{border-bottom:none}
-a.n{color:var(--teal);font-weight:700;text-decoration:none;border-bottom:2px solid #9CC3BF}
-a.n:hover{background:#E3F0EE}
-.flag{background:var(--hl);border-left:4px solid var(--accent);padding:12px 16px;border-radius:8px}
-.chart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
-.group{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;scroll-margin-top:16px}
-.group:target{outline:3px solid var(--teal)}
-.group h3{margin:0 0 8px;font-size:17px;color:var(--ink)}
-.group ol{margin:0;padding-left:0;list-style:none}.group li{padding:8px 0;border-top:1px dashed var(--line)}
-.group li:first-child{border-top:none}.when{color:var(--muted);font-size:14px}
-.tag{display:inline-block;font-size:13px;background:#EFE8DB;border-radius:999px;padding:1px 9px;margin:2px 4px 0 0}
-.back{font-size:14px;color:var(--teal)}footer{margin-top:40px;color:var(--muted);font-size:14px}
-@media print{a.n{border:none;color:var(--ink)}.group{break-inside:avoid}}
-</style></head><body><main id="top"><h1>回診摘要 <span class="en">Visit summary</span></h1><p class="sub">王阿嬤 · 9/29（二） – 10/12（一），共 14 天</p><div class="kpis"><div class="kpi"><b><a class="n" href="#g14">15</a></b><span>筆已確認紀錄 · confirmed entries</span></div><div class="kpi"><b>14 / 14</b><span>天有紀錄 · days logged</span></div><div class="kpi"><b><a class="n" href="#g15">2</a></b><span>天自述身體還好 · good days</span></div></div><h2>症狀 <span class="en">Symptoms</span></h2><table><tr><th>症狀</th><th>次數</th><th>嚴重度（中位數 / 最高）</th><th>常見時段</th><th>持續時間（中位數）</th><th>前後半段比較</th></tr><tr><td><b>頭暈</b></td><td><a class="n" href="#g1">6 次</a><br><span class="when">6 天</span></td><td>5.5 / 7</td><td>下午</td><td>25 分鐘</td><td>後半段較高（5 → 6）</td></tr><tr><td><b>膝蓋痛</b></td><td><a class="n" href="#g2">1 次</a><br><span class="when">1 天</span></td><td>3 / 3</td><td>—</td><td>一整天</td><td>資料不足</td></tr><tr><td><b>失眠</b></td><td><a class="n" href="#g3">1 次</a><br><span class="when">1 天</span></td><td>4 / 4</td><td>晚上</td><td>—</td><td>資料不足</td></tr><tr><td><b>頭痛</b></td><td><a class="n" href="#g4">1 次</a><br><span class="when">1 天</span></td><td>5 / 5</td><td>—</td><td>2 小時</td><td>資料不足</td></tr></table><h2>每日最高嚴重度 <span class="en">Highest severity per day (0–10)</span></h2><div class="chart"><svg viewBox="0 0 820 180" width="100%" role="img" aria-label="每日最高嚴重度"><line x1="28" x2="820" y1="154.0" y2="154.0" stroke="#E6DFD2"/><text x="22" y="158.0" font-size="11" text-anchor="end" fill="#5F686B">0</text><line x1="28" x2="820" y1="82.0" y2="82.0" stroke="#E6DFD2"/><text x="22" y="86.0" font-size="11" text-anchor="end" fill="#5F686B">5</text><line x1="28" x2="820" y1="10.0" y2="10.0" stroke="#E6DFD2"/><text x="22" y="14.0" font-size="11" text-anchor="end" fill="#5F686B">10</text><rect x="31.0" y="96.4" width="50.6" height="57.6" rx="3" fill="#A8432F"><title>9/29（二） 最高 4 分</title></rect><text x="56.3" y="172" font-size="11" text-anchor="middle" fill="#5F686B">9/29</text><rect x="87.6" y="152" width="50.6" height="2" fill="#C9BFAE"/><text x="112.9" y="172" font-size="11" text-anchor="middle" fill="#5F686B">9/30</text><rect x="144.1" y="82.0" width="50.6" height="72.0" rx="3" fill="#A8432F"><title>10/1（四） 最高 5 分</title></rect><text x="169.4" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/1</text><rect x="200.7" y="152" width="50.6" height="2" fill="#C9BFAE"/><text x="226.0" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/2</text><rect x="257.3" y="110.8" width="50.6" height="43.2" rx="3" fill="#A8432F"><title>10/3（六） 最高 3 分</title></rect><text x="282.6" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/3</text><rect x="313.9" y="67.6" width="50.6" height="86.4" rx="3" fill="#A8432F"><title>10/4（日） 最高 6 分</title></rect><text x="339.1" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/4</text><rect x="370.4" y="152" width="50.6" height="2" fill="#C9BFAE"/><text x="395.7" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/5</text><rect x="427.0" y="53.2" width="50.6" height="100.8" rx="3" fill="#A8432F"><title>10/6（二） 最高 7 分</title></rect><text x="452.3" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/6</text><rect x="483.6" y="152" width="50.6" height="2" fill="#C9BFAE"/><text x="508.9" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/7</text><rect x="540.1" y="152" width="50.6" height="2" fill="#C9BFAE"/><text x="565.4" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/8</text><rect x="596.7" y="67.6" width="50.6" height="86.4" rx="3" fill="#A8432F"><title>10/9（五） 最高 6 分</title></rect><text x="622.0" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/9</text><rect x="653.3" y="152" width="50.6" height="2" fill="#C9BFAE"/><text x="678.6" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/10</text><rect x="709.9" y="82.0" width="50.6" height="72.0" rx="3" fill="#A8432F"><title>10/11（日） 最高 5 分</title></rect><text x="735.1" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/11</text><rect x="766.4" y="82.0" width="50.6" height="72.0" rx="3" fill="#A8432F"><title>10/12（一） 最高 5 分</title></rect><text x="791.7" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/12</text></svg></div><h2>量測 <span class="en">Measurements</span></h2><table><tr><th>項目</th><th>筆數</th><th>平均</th><th>最高</th><th>最低</th></tr><tr><td><b>血壓</b>（收縮 / 舒張）</td><td><a class="n" href="#g5">6 筆</a></td><td>148 / 91</td><td><a class="n" href="#g6">158</a></td><td>138</td></tr></table><h2>用藥 <span class="en">Medication, as reported</span></h2><table><tr><th>藥物（使用者的說法）</th><th>說有吃</th><th>說沒吃 / 忘了吃</th></tr><tr><td><b>早上的藥</b></td><td><a class="n" href="#g7">5 次</a></td><td><a class="n" href="#g8">2 次</a></td></tr><tr><td><b>止痛藥</b></td><td><a class="n" href="#g9">1 次</a></td><td>0 次</td></tr></table><h2>使用者提到的可能相關因素 <span class="en">Possible factors the patient mentioned</span></h2><table><tr><th>因素</th><th>提到次數</th></tr><tr><td>睡眠不足</td><td><a class="n" href="#g10">2 次</a></td></tr><tr><td>活動量大</td><td><a class="n" href="#g11">1 次</a></td></tr><tr><td>姿勢改變</td><td><a class="n" href="#g12">1 次</a></td></tr><tr><td>天氣變化</td><td><a class="n" href="#g13">1 次</a></td></tr></table><h2>原話紀錄 <span class="en">Source sentences</span></h2><p class="sub">點上方任一數字，會跳到它的來源句子。Click any number above to see the sentences behind it.</p><section class="group" id="g1"><h3>頭暈（6 次）</h3><ol><li><span class="when">9/29（二） 09:10 · #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/1（四） 15:40 · #3</span><br>「昨晚沒睡好，今天下午頭暈，大概五分，持續半個小時。」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span></li><li><span class="when">10/4（日） 16:20 · #6</span><br>「下午站起來太快，頭暈，大概六分，大概五分鐘。」<br><span class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">5 分鐘</span></li><li><span class="when">10/6（二） 14:30 · #8</span><br>「頭暈，大概七分，天氣變冷，持續一個小時。」<br><span class="tag">頭暈</span><span class="tag">7 分</span><span class="tag">1 小時</span></li><li><span class="when">10/9（五） 15:00 · #12</span><br>「下午又頭暈，大概六分，坐下來休息就好了。（追問：大概持續多久？ 回答：二十分鐘左右）」<br><span class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">20 分鐘</span></li><li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？ 回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g2"><h3>膝蓋痛（1 次）</h3><ol><li><span class="when">10/3（六） 21:00 · #5</span><br>「膝蓋有點痛，大概三分，今天走太多了，一整天都酸酸的。」<br><span class="tag">膝蓋痛</span><span class="tag">3 分</span><span class="tag">一整天</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g3"><h3>失眠（1 次）</h3><ol><li><span class="when">10/6（二） 21:30 · #9</span><br>「晚上睡不著，翻來覆去。（追問：大概幾分？零分是完全不會，十分是最嚴重。 回答：大概四分）」<br><span class="tag">失眠</span><span class="tag">4 分</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g4"><h3>頭痛（1 次）</h3><ol><li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span class="tag">有吃止痛藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g5"><h3>血壓（6 筆）</h3><ol><li><span class="when">9/29（二） 09:10 · #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/2（五） 08:50 · #4</span><br>「血壓一百三十八跟九十，早上的藥吃了。」<br><span class="tag">血壓 138/90</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/5（一） 09:00 · #7</span><br>「忘了吃早上的藥，血壓一百五十二跟九十二。」<br><span class="tag">血壓 152/92</span><span class="tag">沒吃早上的藥</span></li><li><span class="when">10/7（三） 08:40 · #10</span><br>「血壓一百四十五跟八十九，早上的藥有吃。」<br><span class="tag">血壓 145/89</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li><li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？ 回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g6"><h3>血壓最高 158</h3><ol><li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g7"><h3>早上的藥：有吃</h3><ol><li><span class="when">9/29（二） 09:10 · #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span class="tag">有吃早上的藥</span></li><li><span class="when">9/30（三） 20:30 · #2</span><br>「今天還好，沒有哪裡不舒服，早上的藥有吃。」<br><span class="tag">有吃早上的藥</span></li><li><span class="when">10/2（五） 08:50 · #4</span><br>「血壓一百三十八跟九十，早上的藥吃了。」<br><span class="tag">血壓 138/90</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/7（三） 08:40 · #10</span><br>「血壓一百四十五跟八十九，早上的藥有吃。」<br><span class="tag">血壓 145/89</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？ 回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g8"><h3>早上的藥：沒吃</h3><ol><li><span class="when">10/5（一） 09:00 · #7</span><br>「忘了吃早上的藥，血壓一百五十二跟九十二。」<br><span class="tag">血壓 152/92</span><span class="tag">沒吃早上的藥</span></li><li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g9"><h3>止痛藥：有吃</h3><ol><li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span class="tag">有吃止痛藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g10"><h3>提到「睡眠不足」</h3><ol><li><span class="when">10/1（四） 15:40 · #3</span><br>「昨晚沒睡好，今天下午頭暈，大概五分，持續半個小時。」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span></li><li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span class="tag">有吃止痛藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g11"><h3>提到「活動量大」</h3><ol><li><span class="when">10/3（六） 21:00 · #5</span><br>「膝蓋有點痛，大概三分，今天走太多了，一整天都酸酸的。」<br><span class="tag">膝蓋痛</span><span class="tag">3 分</span><span class="tag">一整天</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g12"><h3>提到「姿勢改變」</h3><ol><li><span class="when">10/4（日） 16:20 · #6</span><br>「下午站起來太快，頭暈，大概六分，大概五分鐘。」<br><span class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">5 分鐘</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g13"><h3>提到「天氣變化」</h3><ol><li><span class="when">10/6（二） 14:30 · #8</span><br>「頭暈，大概七分，天氣變冷，持續一個小時。」<br><span class="tag">頭暈</span><span class="tag">7 分</span><span class="tag">1 小時</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g14"><h3>全部紀錄（15 筆）</h3><ol><li><span class="when">9/29（二） 09:10 · #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span class="tag">有吃早上的藥</span></li><li><span class="when">9/30（三） 20:30 · #2</span><br>「今天還好，沒有哪裡不舒服，早上的藥有吃。」<br><span class="tag">有吃早上的藥</span></li><li><span class="when">10/1（四） 15:40 · #3</span><br>「昨晚沒睡好，今天下午頭暈，大概五分，持續半個小時。」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span></li><li><span class="when">10/2（五） 08:50 · #4</span><br>「血壓一百三十八跟九十，早上的藥吃了。」<br><span class="tag">血壓 138/90</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/3（六） 21:00 · #5</span><br>「膝蓋有點痛，大概三分，今天走太多了，一整天都酸酸的。」<br><span class="tag">膝蓋痛</span><span class="tag">3 分</span><span class="tag">一整天</span></li><li><span class="when">10/4（日） 16:20 · #6</span><br>「下午站起來太快，頭暈，大概六分，大概五分鐘。」<br><span class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">5 分鐘</span></li><li><span class="when">10/5（一） 09:00 · #7</span><br>「忘了吃早上的藥，血壓一百五十二跟九十二。」<br><span class="tag">血壓 152/92</span><span class="tag">沒吃早上的藥</span></li><li><span class="when">10/6（二） 14:30 · #8</span><br>「頭暈，大概七分，天氣變冷，持續一個小時。」<br><span class="tag">頭暈</span><span class="tag">7 分</span><span class="tag">1 小時</span></li><li><span class="when">10/6（二） 21:30 · #9</span><br>「晚上睡不著，翻來覆去。（追問：大概幾分？零分是完全不會，十分是最嚴重。 回答：大概四分）」<br><span class="tag">失眠</span><span class="tag">4 分</span></li><li><span class="when">10/7（三） 08:40 · #10</span><br>「血壓一百四十五跟八十九，早上的藥有吃。」<br><span class="tag">血壓 145/89</span><span class="tag">有吃早上的藥</span></li><li><span class="when">10/8（四） 11:10 · #11</span><br>「今天身體不錯，有去公園走走。」<br></li><li><span class="when">10/9（五） 15:00 · #12</span><br>「下午又頭暈，大概六分，坐下來休息就好了。（追問：大概持續多久？ 回答：二十分鐘左右）」<br><span class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">20 分鐘</span></li><li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li><li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span class="tag">有吃止痛藥</span></li><li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？ 回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><section class="group" id="g15"><h3>自述身體還好</h3><ol><li><span class="when">9/30（三） 20:30 · #2</span><br>「今天還好，沒有哪裡不舒服，早上的藥有吃。」<br><span class="tag">有吃早上的藥</span></li><li><span class="when">10/8（四） 11:10 · #11</span><br>「今天身體不錯，有去公園走走。」<br></li></ol><a class="back" href="#top">↑ 回到摘要</a></section><footer>本摘要只整理使用者自己說的內容，不構成醫療診斷或建議。This summary only organises what the patient said. It is not a diagnosis or medical advice.<br>由 Speak Home 在本機產生，未上傳任何資料。</footer></main></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>回診摘要 · 王阿嬤</title>
+    <style>
+        :root {
+            --ink: #1F2A2E;
+            --body: #3A4548;
+            --muted: #5F686B;
+            --paper: #F6F2EA;
+            --card: #FFFDF8;
+            --line: #DED6C6;
+            --accent: #A8432F;
+            --teal: #2F6F6A;
+            --hl: #F3DCD3
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--body);
+            font: 17px/1.6 "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif
+        }
+
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 32px 20px 64px
+        }
+
+        h1 {
+            font-size: 30px;
+            color: var(--ink);
+            margin: 0 0 4px
+        }
+
+        h2 {
+            font-size: 21px;
+            color: var(--ink);
+            margin: 36px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--line)
+        }
+
+        .sub {
+            color: var(--muted);
+            margin: 0
+        }
+
+        .en {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 400
+        }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+            margin-top: 20px
+        }
+
+        .kpi {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px 16px
+        }
+
+        .kpi b {
+            display: block;
+            font-size: 26px;
+            color: var(--ink)
+        }
+
+        .kpi span {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top
+        }
+
+        th {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 600;
+            background: #EFE8DB
+        }
+
+        tr:last-child td {
+            border-bottom: none
+        }
+
+        a.n {
+            color: var(--teal);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid #9CC3BF
+        }
+
+        a.n:hover {
+            background: #E3F0EE
+        }
+
+        .flag {
+            background: var(--hl);
+            border-left: 4px solid var(--accent);
+            padding: 12px 16px;
+            border-radius: 8px
+        }
+
+        .chart {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 12px
+        }
+
+        .group {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            scroll-margin-top: 16px
+        }
+
+        .group:target {
+            outline: 3px solid var(--teal)
+        }
+
+        .group h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+            color: var(--ink)
+        }
+
+        .group ol {
+            margin: 0;
+            padding-left: 0;
+            list-style: none
+        }
+
+        .group li {
+            padding: 8px 0;
+            border-top: 1px dashed var(--line)
+        }
+
+        .group li:first-child {
+            border-top: none
+        }
+
+        .when {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 13px;
+            background: #EFE8DB;
+            border-radius: 999px;
+            padding: 1px 9px;
+            margin: 2px 4px 0 0
+        }
+
+        .back {
+            font-size: 14px;
+            color: var(--teal)
+        }
+
+        footer {
+            margin-top: 40px;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        @media print {
+            a.n {
+                border: none;
+                color: var(--ink)
+            }
+
+            .group {
+                break-inside: avoid
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main id="top">
+        <h1>回診摘要 <span class="en">Visit summary</span></h1>
+        <p class="sub">王阿嬤 · 9/29（二） – 10/12（一），共 14 天</p>
+        <div class="kpis">
+            <div class="kpi"><b><a class="n" href="#g14">15</a></b><span>筆已確認紀錄 · confirmed entries</span></div>
+            <div class="kpi"><b>14 / 14</b><span>天有紀錄 · days logged</span></div>
+            <div class="kpi"><b><a class="n" href="#g15">2</a></b><span>天自述身體還好 · good days</span></div>
+        </div>
+        <h2>症狀 <span class="en">Symptoms</span></h2>
+        <table>
+            <tr>
+                <th>症狀</th>
+                <th>次數</th>
+                <th>嚴重度（中位數 / 最高）</th>
+                <th>常見時段</th>
+                <th>持續時間（中位數）</th>
+                <th>前後半段比較</th>
+            </tr>
+            <tr>
+                <td><b>頭暈</b></td>
+                <td><a class="n" href="#g1">6 次</a><br><span class="when">6 天</span></td>
+                <td>5.5 / 7</td>
+                <td>下午</td>
+                <td>25 分鐘</td>
+                <td>後半段較高（5 → 6）</td>
+            </tr>
+            <tr>
+                <td><b>膝蓋痛</b></td>
+                <td><a class="n" href="#g2">1 次</a><br><span class="when">1 天</span></td>
+                <td>3 / 3</td>
+                <td>—</td>
+                <td>一整天</td>
+                <td>資料不足</td>
+            </tr>
+            <tr>
+                <td><b>失眠</b></td>
+                <td><a class="n" href="#g3">1 次</a><br><span class="when">1 天</span></td>
+                <td>4 / 4</td>
+                <td>晚上</td>
+                <td>—</td>
+                <td>資料不足</td>
+            </tr>
+            <tr>
+                <td><b>頭痛</b></td>
+                <td><a class="n" href="#g4">1 次</a><br><span class="when">1 天</span></td>
+                <td>5 / 5</td>
+                <td>—</td>
+                <td>2 小時</td>
+                <td>資料不足</td>
+            </tr>
+        </table>
+        <h2>每日最高嚴重度 <span class="en">Highest severity per day (0–10)</span></h2>
+        <div class="chart"><svg viewBox="0 0 820 180" width="100%" role="img" aria-label="每日最高嚴重度">
+                <line x1="28" x2="820" y1="154.0" y2="154.0" stroke="#E6DFD2" /><text x="22" y="158.0" font-size="11"
+                    text-anchor="end" fill="#5F686B">0</text>
+                <line x1="28" x2="820" y1="82.0" y2="82.0" stroke="#E6DFD2" /><text x="22" y="86.0" font-size="11"
+                    text-anchor="end" fill="#5F686B">5</text>
+                <line x1="28" x2="820" y1="10.0" y2="10.0" stroke="#E6DFD2" /><text x="22" y="14.0" font-size="11"
+                    text-anchor="end" fill="#5F686B">10</text>
+                <rect x="31.0" y="96.4" width="50.6" height="57.6" rx="3" fill="#A8432F">
+                    <title>9/29（二） 最高 4 分</title>
+                </rect><text x="56.3" y="172" font-size="11" text-anchor="middle" fill="#5F686B">9/29</text>
+                <rect x="87.6" y="152" width="50.6" height="2" fill="#C9BFAE" /><text x="112.9" y="172" font-size="11"
+                    text-anchor="middle" fill="#5F686B">9/30</text>
+                <rect x="144.1" y="82.0" width="50.6" height="72.0" rx="3" fill="#A8432F">
+                    <title>10/1（四） 最高 5 分</title>
+                </rect><text x="169.4" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/1</text>
+                <rect x="200.7" y="152" width="50.6" height="2" fill="#C9BFAE" /><text x="226.0" y="172" font-size="11"
+                    text-anchor="middle" fill="#5F686B">10/2</text>
+                <rect x="257.3" y="110.8" width="50.6" height="43.2" rx="3" fill="#A8432F">
+                    <title>10/3（六） 最高 3 分</title>
+                </rect><text x="282.6" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/3</text>
+                <rect x="313.9" y="67.6" width="50.6" height="86.4" rx="3" fill="#A8432F">
+                    <title>10/4（日） 最高 6 分</title>
+                </rect><text x="339.1" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/4</text>
+                <rect x="370.4" y="152" width="50.6" height="2" fill="#C9BFAE" /><text x="395.7" y="172" font-size="11"
+                    text-anchor="middle" fill="#5F686B">10/5</text>
+                <rect x="427.0" y="53.2" width="50.6" height="100.8" rx="3" fill="#A8432F">
+                    <title>10/6（二） 最高 7 分</title>
+                </rect><text x="452.3" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/6</text>
+                <rect x="483.6" y="152" width="50.6" height="2" fill="#C9BFAE" /><text x="508.9" y="172" font-size="11"
+                    text-anchor="middle" fill="#5F686B">10/7</text>
+                <rect x="540.1" y="152" width="50.6" height="2" fill="#C9BFAE" /><text x="565.4" y="172" font-size="11"
+                    text-anchor="middle" fill="#5F686B">10/8</text>
+                <rect x="596.7" y="67.6" width="50.6" height="86.4" rx="3" fill="#A8432F">
+                    <title>10/9（五） 最高 6 分</title>
+                </rect><text x="622.0" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/9</text>
+                <rect x="653.3" y="152" width="50.6" height="2" fill="#C9BFAE" /><text x="678.6" y="172" font-size="11"
+                    text-anchor="middle" fill="#5F686B">10/10</text>
+                <rect x="709.9" y="82.0" width="50.6" height="72.0" rx="3" fill="#A8432F">
+                    <title>10/11（日） 最高 5 分</title>
+                </rect><text x="735.1" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/11</text>
+                <rect x="766.4" y="82.0" width="50.6" height="72.0" rx="3" fill="#A8432F">
+                    <title>10/12（一） 最高 5 分</title>
+                </rect><text x="791.7" y="172" font-size="11" text-anchor="middle" fill="#5F686B">10/12</text>
+            </svg></div>
+        <h2>量測 <span class="en">Measurements</span></h2>
+        <table>
+            <tr>
+                <th>項目</th>
+                <th>筆數</th>
+                <th>平均</th>
+                <th>最高</th>
+                <th>最低</th>
+            </tr>
+            <tr>
+                <td><b>血壓</b>（收縮 / 舒張）</td>
+                <td><a class="n" href="#g5">6 筆</a></td>
+                <td>148 / 91</td>
+                <td><a class="n" href="#g6">158</a></td>
+                <td>138</td>
+            </tr>
+        </table>
+        <h2>用藥 <span class="en">Medication, as reported</span></h2>
+        <table>
+            <tr>
+                <th>藥物（使用者的說法）</th>
+                <th>說有吃</th>
+                <th>說沒吃 / 忘了吃</th>
+            </tr>
+            <tr>
+                <td><b>早上的藥</b></td>
+                <td><a class="n" href="#g7">5 次</a></td>
+                <td><a class="n" href="#g8">2 次</a></td>
+            </tr>
+            <tr>
+                <td><b>止痛藥</b></td>
+                <td><a class="n" href="#g9">1 次</a></td>
+                <td>0 次</td>
+            </tr>
+        </table>
+        <h2>使用者提到的可能相關因素 <span class="en">Possible factors the patient mentioned</span></h2>
+        <table>
+            <tr>
+                <th>因素</th>
+                <th>提到次數</th>
+            </tr>
+            <tr>
+                <td>睡眠不足</td>
+                <td><a class="n" href="#g10">2 次</a></td>
+            </tr>
+            <tr>
+                <td>活動量大</td>
+                <td><a class="n" href="#g11">1 次</a></td>
+            </tr>
+            <tr>
+                <td>姿勢改變</td>
+                <td><a class="n" href="#g12">1 次</a></td>
+            </tr>
+            <tr>
+                <td>天氣變化</td>
+                <td><a class="n" href="#g13">1 次</a></td>
+            </tr>
+        </table>
+        <h2>原話紀錄 <span class="en">Source sentences</span></h2>
+        <p class="sub">點上方任一數字，會跳到它的來源句子。Click any number above to see the sentences behind it.</p>
+        <section class="group" id="g1">
+            <h3>頭暈（6 次）</h3>
+            <ol>
+                <li><span class="when">9/29（二） 09:10 ·
+                        #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span
+                        class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span
+                        class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/1（四） 15:40 · #3</span><br>「昨晚沒睡好，今天下午頭暈，大概五分，持續半個小時。」<br><span
+                        class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span></li>
+                <li><span class="when">10/4（日） 16:20 · #6</span><br>「下午站起來太快，頭暈，大概六分，大概五分鐘。」<br><span
+                        class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">5 分鐘</span></li>
+                <li><span class="when">10/6（二） 14:30 · #8</span><br>「頭暈，大概七分，天氣變冷，持續一個小時。」<br><span
+                        class="tag">頭暈</span><span class="tag">7 分</span><span class="tag">1 小時</span></li>
+                <li><span class="when">10/9（五） 15:00 · #12</span><br>「下午又頭暈，大概六分，坐下來休息就好了。（追問：大概持續多久？
+                    回答：二十分鐘左右）」<br><span class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">20 分鐘</span>
+                </li>
+                <li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？
+                    回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30
+                        分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g2">
+            <h3>膝蓋痛（1 次）</h3>
+            <ol>
+                <li><span class="when">10/3（六） 21:00 · #5</span><br>「膝蓋有點痛，大概三分，今天走太多了，一整天都酸酸的。」<br><span
+                        class="tag">膝蓋痛</span><span class="tag">3 分</span><span class="tag">一整天</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g3">
+            <h3>失眠（1 次）</h3>
+            <ol>
+                <li><span class="when">10/6（二） 21:30 · #9</span><br>「晚上睡不著，翻來覆去。（追問：大概幾分？零分是完全不會，十分是最嚴重。
+                    回答：大概四分）」<br><span class="tag">失眠</span><span class="tag">4 分</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g4">
+            <h3>頭痛（1 次）</h3>
+            <ol>
+                <li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span
+                        class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span
+                        class="tag">有吃止痛藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g5">
+            <h3>血壓（6 筆）</h3>
+            <ol>
+                <li><span class="when">9/29（二） 09:10 ·
+                        #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span
+                        class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span
+                        class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/2（五） 08:50 · #4</span><br>「血壓一百三十八跟九十，早上的藥吃了。」<br><span class="tag">血壓
+                        138/90</span><span class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/5（一） 09:00 · #7</span><br>「忘了吃早上的藥，血壓一百五十二跟九十二。」<br><span class="tag">血壓
+                        152/92</span><span class="tag">沒吃早上的藥</span></li>
+                <li><span class="when">10/7（三） 08:40 · #10</span><br>「血壓一百四十五跟八十九，早上的藥有吃。」<br><span class="tag">血壓
+                        145/89</span><span class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span
+                        class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li>
+                <li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？
+                    回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30
+                        分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g6">
+            <h3>血壓最高 158</h3>
+            <ol>
+                <li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span
+                        class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g7">
+            <h3>早上的藥：有吃</h3>
+            <ol>
+                <li><span class="when">9/29（二） 09:10 ·
+                        #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span
+                        class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span
+                        class="tag">有吃早上的藥</span></li>
+                <li><span class="when">9/30（三） 20:30 · #2</span><br>「今天還好，沒有哪裡不舒服，早上的藥有吃。」<br><span
+                        class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/2（五） 08:50 · #4</span><br>「血壓一百三十八跟九十，早上的藥吃了。」<br><span class="tag">血壓
+                        138/90</span><span class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/7（三） 08:40 · #10</span><br>「血壓一百四十五跟八十九，早上的藥有吃。」<br><span class="tag">血壓
+                        145/89</span><span class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？
+                    回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30
+                        分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g8">
+            <h3>早上的藥：沒吃</h3>
+            <ol>
+                <li><span class="when">10/5（一） 09:00 · #7</span><br>「忘了吃早上的藥，血壓一百五十二跟九十二。」<br><span class="tag">血壓
+                        152/92</span><span class="tag">沒吃早上的藥</span></li>
+                <li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span
+                        class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g9">
+            <h3>止痛藥：有吃</h3>
+            <ol>
+                <li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span
+                        class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span
+                        class="tag">有吃止痛藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g10">
+            <h3>提到「睡眠不足」</h3>
+            <ol>
+                <li><span class="when">10/1（四） 15:40 · #3</span><br>「昨晚沒睡好，今天下午頭暈，大概五分，持續半個小時。」<br><span
+                        class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span></li>
+                <li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span
+                        class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span
+                        class="tag">有吃止痛藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g11">
+            <h3>提到「活動量大」</h3>
+            <ol>
+                <li><span class="when">10/3（六） 21:00 · #5</span><br>「膝蓋有點痛，大概三分，今天走太多了，一整天都酸酸的。」<br><span
+                        class="tag">膝蓋痛</span><span class="tag">3 分</span><span class="tag">一整天</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g12">
+            <h3>提到「姿勢改變」</h3>
+            <ol>
+                <li><span class="when">10/4（日） 16:20 · #6</span><br>「下午站起來太快，頭暈，大概六分，大概五分鐘。」<br><span
+                        class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">5 分鐘</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g13">
+            <h3>提到「天氣變化」</h3>
+            <ol>
+                <li><span class="when">10/6（二） 14:30 · #8</span><br>「頭暈，大概七分，天氣變冷，持續一個小時。」<br><span
+                        class="tag">頭暈</span><span class="tag">7 分</span><span class="tag">1 小時</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g14">
+            <h3>全部紀錄（15 筆）</h3>
+            <ol>
+                <li><span class="when">9/29（二） 09:10 ·
+                        #1</span><br>「早上起床頭有點暈，大概四分，坐一下十分鐘就好了。量血壓一百四十二跟八十八，有吃早上的藥。」<br><span class="tag">頭暈</span><span
+                        class="tag">4 分</span><span class="tag">10 分鐘</span><span class="tag">血壓 142/88</span><span
+                        class="tag">有吃早上的藥</span></li>
+                <li><span class="when">9/30（三） 20:30 · #2</span><br>「今天還好，沒有哪裡不舒服，早上的藥有吃。」<br><span
+                        class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/1（四） 15:40 · #3</span><br>「昨晚沒睡好，今天下午頭暈，大概五分，持續半個小時。」<br><span
+                        class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30 分鐘</span></li>
+                <li><span class="when">10/2（五） 08:50 · #4</span><br>「血壓一百三十八跟九十，早上的藥吃了。」<br><span class="tag">血壓
+                        138/90</span><span class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/3（六） 21:00 · #5</span><br>「膝蓋有點痛，大概三分，今天走太多了，一整天都酸酸的。」<br><span
+                        class="tag">膝蓋痛</span><span class="tag">3 分</span><span class="tag">一整天</span></li>
+                <li><span class="when">10/4（日） 16:20 · #6</span><br>「下午站起來太快，頭暈，大概六分，大概五分鐘。」<br><span
+                        class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">5 分鐘</span></li>
+                <li><span class="when">10/5（一） 09:00 · #7</span><br>「忘了吃早上的藥，血壓一百五十二跟九十二。」<br><span class="tag">血壓
+                        152/92</span><span class="tag">沒吃早上的藥</span></li>
+                <li><span class="when">10/6（二） 14:30 · #8</span><br>「頭暈，大概七分，天氣變冷，持續一個小時。」<br><span
+                        class="tag">頭暈</span><span class="tag">7 分</span><span class="tag">1 小時</span></li>
+                <li><span class="when">10/6（二） 21:30 · #9</span><br>「晚上睡不著，翻來覆去。（追問：大概幾分？零分是完全不會，十分是最嚴重。
+                    回答：大概四分）」<br><span class="tag">失眠</span><span class="tag">4 分</span></li>
+                <li><span class="when">10/7（三） 08:40 · #10</span><br>「血壓一百四十五跟八十九，早上的藥有吃。」<br><span class="tag">血壓
+                        145/89</span><span class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/8（四） 11:10 · #11</span><br>「今天身體不錯，有去公園走走。」<br></li>
+                <li><span class="when">10/9（五） 15:00 · #12</span><br>「下午又頭暈，大概六分，坐下來休息就好了。（追問：大概持續多久？
+                    回答：二十分鐘左右）」<br><span class="tag">頭暈</span><span class="tag">6 分</span><span class="tag">20 分鐘</span>
+                </li>
+                <li><span class="when">10/10（六） 09:15 · #13</span><br>「早上的藥忘記吃了，中午才發現。血壓一百五十八跟九十五。」<br><span
+                        class="tag">血壓 158/95</span><span class="tag">沒吃早上的藥</span></li>
+                <li><span class="when">10/11（日） 16:45 · #14</span><br>「頭痛，大概五分，吃了一顆止痛藥，大概兩個小時才好。昨晚沒睡好。」<br><span
+                        class="tag">頭痛</span><span class="tag">5 分</span><span class="tag">2 小時</span><span
+                        class="tag">有吃止痛藥</span></li>
+                <li><span class="when">10/12（一） 17:30 · #15</span><br>「今天下午頭有點暈，大概五分，量血壓一百五，有吃早上的藥。（追問：大概持續多久？
+                    回答：大概半個小時）」<br><span class="tag">頭暈</span><span class="tag">5 分</span><span class="tag">30
+                        分鐘</span><span class="tag">血壓 150</span><span class="tag">有吃早上的藥</span></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <section class="group" id="g15">
+            <h3>自述身體還好</h3>
+            <ol>
+                <li><span class="when">9/30（三） 20:30 · #2</span><br>「今天還好，沒有哪裡不舒服，早上的藥有吃。」<br><span
+                        class="tag">有吃早上的藥</span></li>
+                <li><span class="when">10/8（四） 11:10 · #11</span><br>「今天身體不錯，有去公園走走。」<br></li>
+            </ol><a class="back" href="#top">↑ 回到摘要</a>
+        </section>
+        <footer>本摘要只整理使用者自己說的內容，不構成醫療診斷或建議。This summary only organises what the patient said. It is not a diagnosis or
+            medical advice.<br>由 Speak Home 在本機產生，未上傳任何資料。</footer>
+    </main>
+</body>
+
+</html>
